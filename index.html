@@ -8,6 +8,18 @@
     <title>Donations Site</title>
     <script type="module" crossorigin src="/intern-site/assets/index-Bb3KGN0c.js"></script>
     <link rel="stylesheet" crossorigin href="/intern-site/assets/index-D54DKBNp.css">
+    <script>
+      (function() {
+        if (sessionStorage.redirect) {
+          var redirect = sessionStorage.redirect;
+          delete sessionStorage.redirect;
+          if (redirect !== location.href) {
+            history.replaceState(null, null, redirect);
+          }
+        }
+      })();
+    </script>
+
   </head>
   <body>
     <div id="root"></div>
